@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this software, cite this repository and the accompanying manuscript."
+type: software
+title: "Reproducibility code for Repair Filters Mutational Histories by Event Count"
+authors:
+  - family-names: Hardisty
+    given-names: B.
+version: 0.1.0
+abstract: "Python figure generators and exact-arithmetic checks for a weighted mutational-history ordering theorem."
+keywords:
+  - mathematical biology
+  - stochastic ordering
+  - total positivity
+  - mutation repair
+  - reproducibility

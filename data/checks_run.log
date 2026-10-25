@@ -1,0 +1,76 @@
+
+=== scripts/generate_three_panel_figure.py ===
+Pdirect: 23.809523809523807 60.97560975609757 burden ratio %: 8.11881188118812
+event-count sum: 1.0000000000000002 1.0
+k10 probabilities nu=0: [7.139411e-05 1.118927e-02 1.252386e-01 3.490909e-01 3.457276e-01
+ 1.412895e-01 2.533172e-02 1.995962e-03 6.445111e-05 6.650438e-07]
+k10 probabilities nu=1: [4.820698e-03 1.747034e-01 4.490384e-01 2.933536e-01 7.043919e-02
+ 7.288746e-03 3.482130e-04 7.741464e-06 7.500804e-08 2.474067e-10]
+
+=== scripts/generate_result_figures.py ===
+Figure 2: nu=1 burden ratio 0.08118812, direct share 0.60975610
+Figure 3: E7(1)=0.00956703934, matched leading U2/U1=1.94294429
+
+=== checks/audit_markov_bridge.py ===
+PASS: exact Feynman-Kac/route normalization for every path up to k=10 (1023 routes), rational data
+
+=== checks/event_size_ordering_exact_counterexample.py ===
+nu=0: P(D_event>=14)=0.134850843480, derivative=-0.000812277832, P(D_event=15)=0.050957461586, Z=19.624211428047
+nu=1/5: P(D_event>=14)=0.134758571493, derivative=-0.000131748699, P(D_event=15)=0.053903428591, Z=18.551695618246
+Exact P(0.2)-P(0) is negative: True
+All exact-rational assertions passed.
+
+=== checks/pascal_proof_audit_checks.py ===
+exact direct-enumeration checks passed through k= 2
+exact direct-enumeration checks passed through k= 3
+exact direct-enumeration checks passed through k= 4
+exact direct-enumeration checks passed through k= 5
+exact direct-enumeration checks passed through k= 6
+exact direct-enumeration checks passed through k= 7
+exact direct-enumeration checks passed through k= 8
+PASS: TP2 determinants 546 prefix polynomial inequalities 140 breakpoint lower-tail polynomial inequalities 322
+PASS: breakpoint factorization for 330 nonempty cases through k=9
+
+=== checks/verify_figure_values.py ===
+PASS figure regressions: two-hit burden=8.11881188% two-hit direct shares=23.80952%/60.97561% k10 means=4.564780,3.273185 E7(1)=0.00956703934 U2/U1=1.94294429
+
+=== checks/verify_lineage_correspondence.py ===
+k= 3 route count= 4 leading abundance coefficient= 10.923890547917706
+U=0.02000, E[Zk]/N/U^k=9.903396312, repair-containing share=0.0489464, conditional direct=0.236224923, limit=0.224094191, error=0.0121
+U=0.01000, E[Zk]/N/U^k=10.400356620, repair-containing share=0.0254286, conditional direct=0.230116749, limit=0.224094191, error=0.00602
+U=0.00500, E[Zk]/N/U^k=10.658712833, repair-containing share=0.0129663, conditional direct=0.227094549, limit=0.224094191, error=0.003
+U=0.00250, E[Zk]/N/U^k=10.790437626, repair-containing share=0.0065479, conditional direct=0.225591613, limit=0.224094191, error=0.0015
+PASS exact-rational mean-field route checks
+
+=== checks/verify_new_theorems.py ===
+PASS coefficientwise prefix-tail inequalities: 266 through k=7
+PASS exact finite-U route factorization, 3 U values x 3 repair values, all routes through k=5
+
+=== checks/verify_referee_certs.py ===
+Hall exact gap sign for nu= 0 : True (numerator digits: 37 )
+Hall exact gap sign for nu= 1 : True (numerator digits: 96 )
+event tail rational enclosure for nu= 0 :  134850 /10^6 < T < 134851 /10^6
+event tail rational enclosure for nu= 1/5 :  134758 /10^6 < T < 134759 /10^6
+ALL CERTIFICATES PASSED (no floating-point arithmetic).
+
+=== checks/verify_reversed_suffix_counterexample.py ===
+PASS: exact k=4 counterexample; Delta/h1 = 18/19 < 1; Delta>0.
+
+=== checks/weighted_hall_exact_checks.py ===
+k=3, |S|=1->2: 2 exact Hall polynomials OK
+k=4, |S|=1->2: 6 exact Hall polynomials OK
+k=4, |S|=2->3: 6 exact Hall polynomials OK
+k=5, |S|=1->2: 14 exact Hall polynomials OK
+k=5, |S|=2->3: 62 exact Hall polynomials OK
+k=5, |S|=3->4: 14 exact Hall polynomials OK
+k=6, |S|=1->2: 30 exact Hall polynomials OK
+k=6, |S|=2->3: 1022 exact Hall polynomials OK
+k=6, |S|=3->4: 1022 exact Hall polynomials OK
+k=6, |S|=4->5: 30 exact Hall polynomials OK
+PASS: 2208 nontrivial exact polynomial inequalities certified for k<= 6.
+k=12, all a_j=1: P(rank1 contains 6)=462/2047, P(rank2 contains 6)=868/3933, gap=1750/350037.
+k=14, r=2/3,g=4/3,eps=1/2,nu=0: P_2(V_4)= 0.209056385314, P_3(V_4)= 0.203429013216, exact rational gap > 0: True (0.005627372098).
+k=14, r=2/3,g=4/3,eps=1/2,nu=1: P_2(V_4)= 0.195292246277, P_3(V_4)= 0.194178850399, exact rational gap > 0: True (0.001113395878).
+k=7, |S|=1->2, A={{3}}: coefficient of a1*a3*a4 is -245; coefficientwise strategy stops working (not a counterexample).
+
+PASS: selected reproduction steps completed.
