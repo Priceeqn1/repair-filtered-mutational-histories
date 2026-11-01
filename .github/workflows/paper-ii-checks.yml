@@ -24,3 +24,5 @@ jobs:
         run: python paper-ii-driver-tunneling/run_checks.py --full
       - name: Regenerate figure PDFs and PNGs
         run: python paper-ii-driver-tunneling/make_figures.py
+      - name: Verify figure numerical regressions and output files
+        run: python paper-ii-driver-tunneling/checks/verify_figure_regressions.py
