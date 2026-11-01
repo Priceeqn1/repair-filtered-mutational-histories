@@ -98,6 +98,8 @@ def certificate(M,nu):
  xl,xh=source_bounds(nu)
  ac,al=arat[Ip[(1,0)]],arat[Ip[(0,1)]]
  qc,ql=qrat[Ik[(0,0,1,0)]],qrat[Ik[(0,0,0,1)]]
+ # Endpoint monotonicity in x requires nonnegative C-founder bounds.
+ assert ac-Ea>0 and qc-Eq>0, 'source endpoint monotonicity unverified'
  nlo=2*(xl*(ac-Ea)+(al-Ea));nhi=2*(xh*(ac+Ea)+(al+Ea))
  dlo=xl*(qc-Eq)+(ql-Eq);dhi=xh*(qc+Eq)+(ql+Eq)
  assert nlo>0 and dlo>0
