@@ -1,0 +1,22 @@
+{
+  "creators": [
+    {
+      "name": "Hardisty, Benjamin"
+    }
+  ],
+  "title": "Repair-Dependent Competition Between Direct Driver Founding and Stochastic Tunneling Before Clonal Establishment: Reproducibility Code (Paper II)",
+  "description": "<p>Reproducibility code for the companion mathematical-biology manuscript <em>Repair-Dependent Competition Between Direct Driver Founding and Stochastic Tunneling Before Clonal Establishment</em>.</p><p>The <code>paper-ii-driver-tunneling/</code> directory contains finite-state killed branching-process generators, exact rational-residual certifications for selected finite-threshold pathway comparisons, tests of model identities, numerical figure generators, and figure regression checks. The same GitHub repository also contains the independent Paper I materials.</p><p>These calculations establish strict pathway comparison inequalities at selected parameter values; they do not certify a global number of crossing points.</p>",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "mit",
+  "keywords": [
+    "mathematical biology",
+    "stochastic tunneling",
+    "driver mutations",
+    "mutation repair",
+    "branching processes",
+    "Feynman-Kac",
+    "rational-residual certification",
+    "reproducibility"
+  ]
+}
