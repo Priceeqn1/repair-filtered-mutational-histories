@@ -1,0 +1,210 @@
+
+=== reproduce/verify_generator.py ===
+nu=0 DL=0.195919266737 DC=1.75289312457 population=0.714910552683 q=0.980484585651
+nu=0.1 DL=0.336554585243 DC=1.75289312457 population=0.903090000975 q=0.980484585651
+nu=0.192345334861 DL=0.444595513685 DC=1.75289312457 population=1 q=0.980484585651
+nu=1 DL=0.96029309878 DC=1.75289312457 population=1.33662722664 q=0.980484585651
+nu=1.10964042855 DL=0.999999999999 DC=1.75289312457 population=1.35903094358 q=0.980484585651
+nu=3 DL=1.34679821502 DC=1.75289312457 population=1.54593656921 q=0.980484585651
+nu=8 DL=1.56862388481 DC=1.75289312457 population=1.66006039493 q=0.980484585651
+root 0.19234533486122987
+ALL MODEL-GENERATOR CHECKS PASS
+
+=== reproduce/verify_population_switch.py ===
+x0 1/2 D0 40878125/57179356 0.714910552682685
+endpoint 2575/1469
+root 0.19234533486122943656537819667922524
+DL0 0.19591926673675722 DC 1.7528931245745405
+0 0.714910552682685
+0.1 0.903090000975457
+0.2 1.0066166549834428
+0.5 1.1852368945824738
+1 1.3366272266445445
+2 1.4772821435548336
+4 1.5869658106216515
+
+=== reproduce/verify_balance.py ===
+opp value0= 20/21 derivative0= -43/10878 limit= 110/111
+deaths value0= 3/7 derivative0= -291/3626 limit= 7/37
+est value0= 16/21 derivative0= 415/10878 limit= 100/111
+balance residual: 0
+PASS
+
+=== reproduce/verify_common_green.py ===
+nu=0 DL=0.195919266737 DC=1.75289312457 population=0.714910552683 q=0.980484585651
+nu=0.1 DL=0.336554585243 DC=1.75289312457 population=0.903090000975 q=0.980484585651
+nu=0.192345334861 DL=0.444595513685 DC=1.75289312457 population=1 q=0.980484585651
+nu=1 DL=0.96029309878 DC=1.75289312457 population=1.33662722664 q=0.980484585651
+nu=1.10964042855 DL=0.999999999999 DC=1.75289312457 population=1.35903094358 q=0.980484585651
+nu=3 DL=1.34679821502 DC=1.75289312457 population=1.54593656921 q=0.980484585651
+nu=8 DL=1.56862388481 DC=1.75289312457 population=1.66006039493 q=0.980484585651
+root 0.19234533486122987
+ALL MODEL-GENERATOR CHECKS PASS
+population=False nu=0.1 derivative=3.78001990214 components=[np.float64(0.0), np.float64(3.7807084468), np.float64(-0.00068854466)]
+population=False nu=0.8 derivative=0.53664953541 components=[np.float64(0.0), np.float64(0.53680567139), np.float64(-0.00015613597)]
+population=False nu=2.0 derivative=0.14177438569 components=[np.float64(0.0), np.float64(0.141839068), np.float64(-6.46823e-05)]
+population=True nu=0.1 derivative=1.41552006217 components=[np.float64(0.57029996517), np.float64(0.84537405698), np.float64(-0.00015395998)]
+population=True nu=0.8 derivative=0.21335589179 components=[np.float64(0.01994682769), np.float64(0.19346533568), np.float64(-5.627157e-05)]
+population=True nu=2.0 derivative=0.06226050127 components=[np.float64(0.00225657794), np.float64(0.06003129917), np.float64(-2.737583e-05)]
+ALL GREEN RESPONSE TESTS PASS
+
+=== reproduce/verify_large_M_independent.py ===
+q_infinity: 0.561552812809
+unbounded D(0), D(infty), crossing: 0.466491688539 1.2 3.424212261823
+M | D(0) | D(fast repair) | crossover (if demonstrated) | qM
+3 | 0.224580552 | 0.512138344 | None | 0.521739130
+4 | 0.346943418 | 0.847988930 | None | 0.552380952
+5 | 0.410680417 | 1.033715780 | 24.89057788847402 | 0.559498956
+6 | 0.441561344 | 1.125412353 | 5.991856491121983 | 0.561098398
+8 | 0.461911783 | 1.186267208 | 3.7409181730175183 | 0.561530848
+10 | 0.465702032 | 1.197631289 | 3.4756500247273814 | 0.561551756
+All generator, root, endpoint, direct-bound and insertion-bound checks passed.
+
+=== reproduce/verify_sign_classification.py ===
+unbounded nu=       0: D=1.018339895, Dprime=-499.172034180, W=-0.000327
+unbounded nu=   0.001: D=0.983446965, Dprime=-16.085768324, W=-0.007646
+unbounded nu=    0.03: D=0.906000711, Dprime=-0.585805234, W=-0.032866
+unbounded nu=    0.25: D=0.921000198, Dprime=+0.143506894, W=-0.052486
+unbounded nu=       2: D=1.012319773, Dprime=+0.014774524, W=-0.012636
+unbounded nu=      10: D=1.027900235, Dprime=-0.000246018, W=+0.051040
+Unbounded parity roots: [0.00026625702797297024, 1.403153735829372]
+Unbounded stationary roots: [0.06931559276896514, 7.282011100163376]
+Unbounded high-repair-level root: [2.7245308396367407]
+Hazard certificate: f*B_L*Q-T = 0.15427742459105093
+finite M 8 at 0,.1,10,100: 0.981461365 0.960562901 0.991617981 0.983081919
+finite M 10 at 0,.1,10,100: 1.007918564 0.962282795 1.016641534 1.009430346
+finite M 12 at 0,.1,10,100: 1.016128501 0.951182886 1.024327337 1.017600953
+M=10 strict inequalities certify two parity crossings and two interior extrema.
+
+=== reproduce/verify_heterogeneous.py ===
+Exact ratio identity: verified by floating-point substitution.
+Symbolic overshoot certificate: -39/68 + 113*sqrt(17)/340
+Unbounded: D(0)=0.881237879 D(2)=1.092978466 D(infinity)=0.941176471
+Unbounded crossing in (0,2): 0.335762421
+Unbounded crossing in (2,100): 18.989061731
+M=5: D(0)=0.796482598 D(2)=0.987431375 D(infty)=0.850073007
+M=6: D(0)=0.848406729 D(2)=1.052047319 D(infty)=0.905855906
+M=8: D(0)=0.876795855 D(2)=1.087434775 D(infty)=0.936393660
+M=10: D(0)=0.880679725 D(2)=1.092281619 D(infty)=0.940575316
+All checks passed.
+
+=== reproduce/certify_M3_global.py ===
+Exact M3 model sizes: pre=5, post=14
+num degree 18 den degree 18
+parity Descartes variations 0 degree 18 at ends 1 1
+stationary Descartes variations 1 degree 34 at ends 1 -1
+parity coefficient signs hi-to-low: +++++++++++++++++++
+parity sample signs: [('1/2', 1), ('91/100', 1), ('23/25', 1), ('1', 1)]
+parity degree 18 gcd(n,d) 0
+stationary coefficient signs hi-to-low: ---------------++++++++++++++++++++
+stationary sample signs: [('1/2', 1), ('91/100', 1), ('23/25', -1), ('1', -1)]
+stationary degree 34 gcd(n,d) 0
+CERTIFIED: exactly one interior maximum and no D3=1 crossing.
+Total calculation time 1.504 seconds
+
+=== checks/certify_M3_with_bracket.py ===
+Exact M3 model sizes: pre=5, post=14
+num degree 18 den degree 18
+parity Descartes variations 0 degree 18 at ends 1 1
+stationary Descartes variations 1 degree 34 at ends 1 -1
+parity coefficient signs hi-to-low: +++++++++++++++++++
+parity sample signs: [('1/2', 1), ('91/100', 1), ('23/25', 1), ('1', 1)]
+parity degree 18 gcd(n,d) 0
+stationary coefficient signs hi-to-low: ---------------++++++++++++++++++++
+stationary sample signs: [('1/2', 1), ('91/100', 1), ('23/25', -1), ('1', -1)]
+stationary degree 34 gcd(n,d) 0
+CERTIFIED: exactly one interior maximum and no D3=1 crossing.
+Total calculation time 1.516 seconds
+INDEPENDENT RATIONAL BRACKET for stationary root x: 0.9122499902132425 0.9122499902132425
+stationary nu: 1.120605332521410 stationary ratio: 0.4376169641703483
+D3(0): 0.3825245040195707
+
+=== reproduce/certify_M10_parity.py ===
+M= 9 nu= 0 active states= 450 pre states= 44
+   exact rational residual norms 8.696882325409661e-15 2.730662609707057e-15
+   conservative certified errors q,A: 8.69688232540966e-09 2.483829867023702e-07
+   certified ratio interval: [0.998469246224, 0.998474355346] <1
+M= 9 nu= 1/10 active states= 450 pre states= 44
+   exact rational residual norms 1.3925947284221251e-14 3.1674074694926776e-15
+   conservative certified errors q,A: 1.3925947284221252e-08 3.9772508632259416e-07
+   certified ratio interval: [0.964527969048, 0.964533624974] <1
+M= 9 nu= 6 active states= 450 pre states= 44
+   exact rational residual norms 2.2192467641346524e-14 1.425526363618701e-14
+   conservative certified errors q,A: 2.2192467641346525e-08 6.33817019339844e-07
+   certified ratio interval: [1.009202609647, 1.009207318169] >1
+M= 9 nu= 1000 active states= 450 pre states= 44
+   exact rational residual norms 2.818377083935175e-12 1.4709835998278864e-12
+   conservative certified errors q,A: 2.818377083935175e-06 8.049286432509018e-05
+   certified ratio interval: [0.998363849009, 0.998916095419] <1
+M= 10 nu= 0 active states= 660 pre states= 54
+   exact rational residual norms 1.7964408858203184e-14 6.0462521575434765e-15
+   conservative certified errors q,A: 1.7964408858203183e-08 6.596531617470267e-07
+   certified ratio interval: [1.007911858514, 1.007925270385] >1
+M= 10 nu= 1/10 active states= 660 pre states= 54
+   exact rational residual norms 1.990673581531155e-14 5.1009601252272716e-15
+   conservative certified errors q,A: 1.990673581531155e-08 7.309753969066135e-07
+   certified ratio interval: [0.962277742616, 0.962287847982] <1
+M= 10 nu= 10 active states= 660 pre states= 54
+   exact rational residual norms 5.434195715636747e-14 2.819290055274616e-14
+   conservative certified errors q,A: 5.434195715636747e-08 1.995436986066412e-06
+   certified ratio interval: [1.016634412777, 1.016648655549] >1
+M= 10 nu= 100 active states= 660 pre states= 54
+   exact rational residual norms 4.817015712050358e-13 2.8972380050618084e-13
+   conservative certified errors q,A: 4.817015712050357e-07 1.7688084975770954e-05
+   certified ratio interval: [1.009370044536, 1.009490646903] >1
+
+=== checks/verify_all_eight_published.py ===
+M= 9 nu= 0 active states= 450 pre states= 44
+   exact rational residual norms 8.696882325409661e-15 2.730662609707057e-15
+   conservative certified errors q,A: 8.69688232540966e-09 2.483829867023702e-07
+   certified ratio interval: [0.998469246224, 0.998474355346] <1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 9 nu= 1/10 active states= 450 pre states= 44
+   exact rational residual norms 1.3925947284221251e-14 3.1674074694926776e-15
+   conservative certified errors q,A: 1.3925947284221252e-08 3.9772508632259416e-07
+   certified ratio interval: [0.964527969048, 0.964533624974] <1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 9 nu= 6 active states= 450 pre states= 44
+   exact rational residual norms 2.2192467641346524e-14 1.425526363618701e-14
+   conservative certified errors q,A: 2.2192467641346525e-08 6.33817019339844e-07
+   certified ratio interval: [1.009202609647, 1.009207318169] >1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 9 nu= 1000 active states= 450 pre states= 44
+   exact rational residual norms 2.818377083935175e-12 1.4709835998278864e-12
+   conservative certified errors q,A: 2.818377083935175e-06 8.049286432509018e-05
+   certified ratio interval: [0.998363849009, 0.998916095419] <1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 10 nu= 0 active states= 660 pre states= 54
+   exact rational residual norms 1.7964408858203184e-14 6.0462521575434765e-15
+   conservative certified errors q,A: 1.7964408858203183e-08 6.596531617470267e-07
+   certified ratio interval: [1.007911858514, 1.007925270385] >1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 10 nu= 1/10 active states= 660 pre states= 54
+   exact rational residual norms 1.990673581531155e-14 5.1009601252272716e-15
+   conservative certified errors q,A: 1.990673581531155e-08 7.309753969066135e-07
+   certified ratio interval: [0.962277742616, 0.962287847982] <1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 10 nu= 10 active states= 660 pre states= 54
+   exact rational residual norms 5.434195715636747e-14 2.819290055274616e-14
+   conservative certified errors q,A: 5.434195715636747e-08 1.995436986066412e-06
+   certified ratio interval: [1.016634412777, 1.016648655549] >1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+M= 10 nu= 100 active states= 660 pre states= 54
+   exact rational residual norms 4.817015712050358e-13 2.8972380050618084e-13
+   conservative certified errors q,A: 4.817015712050357e-07 1.7688084975770954e-05
+   certified ratio interval: [1.009370044536, 1.009490646903] >1
+   MANUSCRIPT PUBLISHED ENCLOSURE STRICTLY VERIFIED
+
+=== reproduce/sensitivity/certify_moderate.py ===
+M=10, nu=0 source phi [0.266666666667,0.266666666667], numerical D interval [1.006962847291,1.006962851480], bounds Eq=1.24e-11, Ea=4.54e-10
+M=10, nu=1/10 source phi [0.249194176746,0.249194176836], numerical D interval [0.995593755202,0.995593761234], bounds Eq=1.83e-11, Ea=6.72e-10
+M=10, nu=10 source phi [0.201937182260,0.201937182341], numerical D interval [1.011302756198,1.011302773267], bounds Eq=6.59e-11, Ea=2.42e-09
+CERTIFIED at least two finite M=10 parity crossings
+
+=== reproduce/sensitivity/certify_lower.py ===
+M=10, nu=0 source phi [0.133333333333,0.133333333333], numerical D interval [1.004034950446,1.004034950711], bounds Eq=9.29e-13, Ea=3.41e-11
+M=10, nu=1/5 source phi [0.120748055739,0.120748055833], numerical D interval [0.999464300612,0.999464301611], bounds Eq=2.72e-12, Ea=9.99e-11
+M=10, nu=10 source phi [0.101086999287,0.101086999377], numerical D interval [1.009540598313,1.009540600502], bounds Eq=7.3e-12, Ea=2.68e-10
+CERTIFIED at least two finite M=10 parity crossings
+
+All requested checks completed without assertion failures.
