@@ -1,0 +1,37 @@
+
+=== reproduce/plot_switches.py ===
+nu=0 DL=0.195919266737 DC=1.75289312457 population=0.714910552683 q=0.980484585651
+nu=0.1 DL=0.336554585243 DC=1.75289312457 population=0.903090000975 q=0.980484585651
+nu=0.192345334861 DL=0.444595513685 DC=1.75289312457 population=1 q=0.980484585651
+nu=1 DL=0.96029309878 DC=1.75289312457 population=1.33662722664 q=0.980484585651
+nu=1.10964042855 DL=0.999999999999 DC=1.75289312457 population=1.35903094358 q=0.980484585651
+nu=3 DL=1.34679821502 DC=1.75289312457 population=1.54593656921 q=0.980484585651
+nu=8 DL=1.56862388481 DC=1.75289312457 population=1.66006039493 q=0.980484585651
+root 0.19234533486122987
+ALL MODEL-GENERATOR CHECKS PASS
+Created population_repair_switch_M3.pdf and supplementary repair_switch_M3.pdf
+
+=== reproduce/plot_opportunity.py ===
+plot generated; opportunity minimum 1.0217391304347827 0.950750624967348
+
+=== reproduce/plot_reentrant.py ===
+Saved figure; M9 and M10 values from finite generators.
+
+=== reproduce/plot_threshold_regimes.py ===
+M  D(0) D(.1) D(10) D(1000)
+3 0.3825245 0.4029816 0.4033334 0.3827751
+4 0.6399291 0.6659667 0.6605452 0.6401794
+5 0.80093 0.8206201 0.8179436 0.8011532
+6 0.8963136 0.9037152 0.9101356 0.8965135
+7 0.950868 0.9440507 0.96246 0.9510522
+8 0.9814614 0.9605629 0.991618 0.9816355
+9 0.9984718 0.9645308 1.0077377 0.99864
+10 1.0079186 0.9622828 1.0166415 1.0080833
+11 1.0131812 0.9572363 1.0215766 1.0133441
+
+=== reproduce/plot_biological_sensitivity.py ===
+Created finite_M10_sensitivity.pdf and lesion_input_only.pdf
+
+All Python figures generated in figures/.
+The model schematic is provided separately as editable TikZ: figures/model_schematic.tex
+ELAPSED:20.20

@@ -1,0 +1,28 @@
+name: Paper II reproducibility checks
+on:
+  push:
+    paths:
+      - "paper-ii-driver-tunneling/**"
+      - ".github/workflows/paper-ii-checks.yml"
+  pull_request:
+    paths:
+      - "paper-ii-driver-tunneling/**"
+      - ".github/workflows/paper-ii-checks.yml"
+  workflow_dispatch:
+
+jobs:
+  paper-ii:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install mathematical dependencies
+        run: python -m pip install -r paper-ii-driver-tunneling/requirements.txt
+      - name: Run exact and numeric verification
+        run: python paper-ii-driver-tunneling/run_checks.py --full
+      - name: Regenerate figure PDFs and PNGs
+        run: python paper-ii-driver-tunneling/make_figures.py
+      - name: Verify figure numerical regressions and output files
+        run: python paper-ii-driver-tunneling/checks/verify_figure_regressions.py

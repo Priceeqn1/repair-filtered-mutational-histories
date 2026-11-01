@@ -1,0 +1,21 @@
+\begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
+  source/.style={draw=blue!55!black,fill=blue!5,rounded corners=2pt,
+    align=center,text width=2.65cm,minimum height=1.06cm,font=\scriptsize},
+  stage/.style={draw=black!55,fill=black!2,rounded corners=2pt,
+    align=center,text width=2.65cm,minimum height=1.00cm,font=\scriptsize},
+  outcome/.style={draw=teal!65!black,fill=teal!5,rounded corners=2pt,
+    align=center,text width=2.70cm,minimum height=1.50cm,font=\scriptsize},
+  arrow/.style={->,semithick,draw=black!75}]
+\node[source] (source) at (1.4,0) {Homeostatic\\ lesion--repair source\\[2pt] $F^*(U,\nu),\;\mathcal R_j(U,\nu)$};
+\node[stage] (direct) at (5.0,1.30) {\textbf{Direct founding}\\ two-driver immigrant\\ $O(V^2)$};
+\node[stage] (pre) at (5.0,-1.30) {\textbf{Sequential route}\\ one-driver immigrant\\ $O(V)$};
+\node[stage] (hit) at (8.55,-1.30) {Second-driver daughter\\ in one-driver clone\\ additional $O(V)$};
+\node[outcome] (outcome) at (12.15,0) {\textbf{Competing exits}\\[3pt]
+  \textcolor{teal!65!black}{Commitment: success}\\[3pt]
+  Extinction or size $M$: not counted};
+\draw[arrow] (source.north east) -- (direct.west);
+\draw[arrow] (source.south east) -- (pre.west);
+\draw[arrow] (pre.east) -- (hit.west);
+\draw[arrow] (direct.east) -- (outcome.north west);
+\draw[arrow] (hit.east) -- (outcome.south west);
+\end{tikzpicture}
