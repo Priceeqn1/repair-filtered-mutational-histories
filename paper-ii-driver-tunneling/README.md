@@ -66,3 +66,7 @@ The figure source and verification scripts were gathered from the actual Paper I
 Publish this folder in the same repository as Paper I, but give **Paper II its own release tag and Zenodo *version DOI*** (if archiving through the linked Zenodo repository). If Zenodo connects a repository-wide concept DOI, carefully distinguish that concept DOI from a Paper-II-specific version record; don't claim the DOI is paper-specific until confirmed. Add the exact archived revision identifier to the paper's Code availability statement once released.
 
 The repository owner should review code, generated outputs and license before making this public. The manuscript and repository should point to one another only when their URLs are verified.
+
+## Auditable finite-threshold parity certificates
+
+See [`docs/M10_RATIONAL_RESIDUAL_CERTIFICATE.md`](docs/M10_RATIONAL_RESIDUAL_CERTIFICATE.md) for a self-contained derivation of the post-hit and pre-hit Green-operator error bounds, exact physical-source bracketing, and rational interval sign tests used by `reproduce/certify_M10_parity.py`. The checks certify strict signs at selected rates, **not** a global number of crossings.
