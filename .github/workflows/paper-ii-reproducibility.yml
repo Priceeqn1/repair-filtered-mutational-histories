@@ -1,0 +1,36 @@
+name: Paper II reproducibility (independent)
+
+on:
+  push:
+    branches: [main, paper-ii-reproducibility]
+    paths:
+      - 'paper-ii/**'
+      - '.github/workflows/paper-ii-reproducibility.yml'
+  pull_request:
+    paths:
+      - 'paper-ii/**'
+      - '.github/workflows/paper-ii-reproducibility.yml'
+  workflow_dispatch:
+
+jobs:
+  paper-ii:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check founder-source identities (no third-party dependencies)
+        run: python paper-ii/reproduce.py --checks
+      - name: Install plotting dependencies
+        run: python -m pip install -r paper-ii/requirements.txt
+      - name: Generate diagnostic figure and values
+        run: python paper-ii/reproduce.py --figures
+      - name: Upload Paper II diagnostic artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper-ii-founder-source-diagnostic
+          path: |
+            paper-ii/figures/*.pdf
+            paper-ii/figures/*.png
+            paper-ii/data/*.csv
