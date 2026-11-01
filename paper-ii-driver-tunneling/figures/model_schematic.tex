@@ -1,23 +1,21 @@
-% Editable TikZ figure for Overleaf; compiled in main.tex.
 \begin{tikzpicture}[x=1cm,y=1cm,>=Latex,
-  source/.style={draw=blue!60!black,fill=blue!7,rounded corners=2.2pt,align=center,text width=3.0cm,minimum height=1.10cm,font=\scriptsize},
-  clone/.style={draw=black!55,fill=black!3,rounded corners=2.2pt,align=center,text width=2.65cm,minimum height=1.0cm,font=\scriptsize},
-  goal/.style={draw=teal!65!black,fill=teal!8,rounded corners=2.2pt,align=center,text width=2.6cm,minimum height=0.9cm,font=\scriptsize},
-  stop/.style={draw=red!55!black,fill=red!5,rounded corners=2.2pt,align=center,text width=3.5cm,minimum height=0.8cm,font=\scriptsize},
-  path/.style={->,thick,draw=black!70}]
-\node[source] (source) at (1.7,0) {Homeostatic lesion--repair source\\[2pt] $F^*(U,\nu),\ \mathcal R_j(U,\nu)$};
-\node[clone] (direct) at (5.8,1.55) {\textbf{Direct founding}\\ two-driver immigrant\\ $O(V^2)$};
-\node[clone] (pre) at (5.8,-1.55) {\textbf{Sequential founding}\\ one-driver immigrant\\ $O(V)$};
-\node[clone] (post) at (9.3,-1.55) {Second-driver insertion\\ during one-driver occupation\\ additional $O(V)$};
-\node[goal] (success) at (13.55,0.95) {\textbf{Commitment}\\ counted as success};
-\node[stop] (stop) at (13.55,-1.55) {\textbf{Competing stopping}\\ extinction or total size $M$};
-\draw[path] (source.north east) -- node[above,sloped,font=\scriptsize]{direct hits} (direct.west);
-\draw[path] (source.south east) -- node[below,sloped,font=\scriptsize]{first driver} (pre.west);
-\draw[path] (pre.east) -- node[above,font=\scriptsize]{marked birth} (post.west);
-\draw[path] (direct.east) -- (success.west);
-\draw[path] (post.north east) -- (success.south west);
-\draw[->,dashed,red!65!black] (direct.south east) -- (stop.north west);
-\draw[->,dashed,red!65!black] (post.east) -- (stop.west);
-\node[font=\scriptsize,text=black!70,anchor=west] at (.1,-2.62) {Repair $L\to C$ acts in the resident source and in driver-bearing lineages.};
-\node[font=\scriptsize,text=black!70,anchor=west] at (.1,-3.02) {Success requires commitment \emph{before} either absorbing boundary; all clones share the same total-size cutoff.};
+  source/.style={draw=blue!55!black,fill=blue!5,rounded corners=2pt,
+    align=center,text width=2.65cm,minimum height=1.06cm,font=\scriptsize},
+  stage/.style={draw=black!55,fill=black!2,rounded corners=2pt,
+    align=center,text width=2.65cm,minimum height=1.00cm,font=\scriptsize},
+  outcome/.style={draw=teal!65!black,fill=teal!5,rounded corners=2pt,
+    align=center,text width=2.70cm,minimum height=1.50cm,font=\scriptsize},
+  arrow/.style={->,semithick,draw=black!75}]
+\node[source] (source) at (1.4,0) {Homeostatic\\ lesion--repair source\\[2pt] $F^*(U,\nu),\;\mathcal R_j(U,\nu)$};
+\node[stage] (direct) at (5.0,1.30) {\textbf{Direct founding}\\ two-driver immigrant\\ $O(V^2)$};
+\node[stage] (pre) at (5.0,-1.30) {\textbf{Sequential route}\\ one-driver immigrant\\ $O(V)$};
+\node[stage] (hit) at (8.55,-1.30) {Second-driver daughter\\ in one-driver clone\\ additional $O(V)$};
+\node[outcome] (outcome) at (12.15,0) {\textbf{Competing exits}\\[3pt]
+  \textcolor{teal!65!black}{Commitment: success}\\[3pt]
+  Extinction or size $M$: not counted};
+\draw[arrow] (source.north east) -- (direct.west);
+\draw[arrow] (source.south east) -- (pre.west);
+\draw[arrow] (pre.east) -- (hit.west);
+\draw[arrow] (direct.east) -- (outcome.north west);
+\draw[arrow] (hit.east) -- (outcome.south west);
 \end{tikzpicture}
