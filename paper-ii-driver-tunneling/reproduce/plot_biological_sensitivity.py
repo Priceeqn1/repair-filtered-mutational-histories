@@ -20,10 +20,11 @@ OUT=Path(__file__).resolve().parent.parent/'figures';OUT.mkdir(exist_ok=True)
 
 cases=[(.5,1e-6,'Original existence example','tab:blue',0.1),(.2,1e-3,'Moderate source/commitment','tab:orange',0.1),(.1,1e-2,'Lower lesion input','tab:green',0.2)]
 nu=np.geomspace(1e-4,1e2,145)
+TH={1e-6:r'10^{-6}',1e-3:'0.001',1e-2:'0.01'}
 fig,ax=plt.subplots(figsize=(9.0,5.3),constrained_layout=True)
 for U,theta,label,color,middle in cases:
     D=np.array([finite_ratio(10,float(v),U=U,theta_L=theta) for v in nu])
-    ax.plot(nu,D,lw=2.1,color=color,label=rf'$U={U:g}$, $\theta_L={theta:g}$')
+    ax.plot(nu,D,lw=2.1,color=color,label=rf'$U={U:g}$, $\theta_L={TH[theta]}$')
     witnesses=[middle,10]
     y=[finite_ratio(10,float(v),U=U,theta_L=theta) for v in witnesses]
     ax.scatter(witnesses,y,s=39,color=color,edgecolor='white',zorder=5,lw=.6)
@@ -33,12 +34,12 @@ ax.set_xlabel(r'Repair intensity $\nu$ (log scale)',fontsize=12)
 ax.set_ylabel(r'Sequential / direct ratio $D_{10}$',fontsize=12)
 ax.legend(loc='lower left',fontsize=10,frameon=False)
 ax.text(1.8e-4,1.031,r'$D_{10}>1$: sequential favored',fontsize=9,color='0.34',va='top')
-ax.text(2.5,0.951,r'$D_{10}<1$: direct favored',fontsize=9,color='0.34')
+ax.text(1.8e-4,0.988,r'$D_{10}<1$: direct favored',fontsize=9,color='0.34')
 ax.tick_params(labelsize=10)
 ax.minorticks_on()
 ax.spines[['top','right']].set_visible(False)
 # Focus inset on lower-U nearly-parity effect, with independent evaluated points.
-axins=ax.inset_axes([.46,.57,.42,.31])
+axins=ax.inset_axes([.70,.14,.28,.27])
 local=np.linspace(.045,.6,80)
 near=np.array([finite_ratio(10,float(v),U=.1,theta_L=.01) for v in local])
 axins.plot(local,near,color='tab:green',lw=1.8)

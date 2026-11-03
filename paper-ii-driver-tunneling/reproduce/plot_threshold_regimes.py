@@ -8,7 +8,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
-Ms=list(range(3,12))
+Ms=list(range(4,12))
 ns=[0.0,0.1,10.0,1000.0]
 y={nu:[finite_ratio(m,nu) for m in Ms] for nu in ns}
 fig,ax=plt.subplots(figsize=(6.4,3.65))
@@ -18,9 +18,9 @@ for nu,st in zip(ns,styles):
 ax.axhline(1,ls='--',lw=1.0,color='.35',label='equal pathways')
 ax.set_xlabel(r'Establishment threshold $M$ (cells)')
 ax.set_ylabel(r'Sequential / direct ratio $D_M$')
-ax.set_xlim(2.8,11.3)
+ax.set_xlim(3.7,11.3)
 ax.xaxis.set_major_locator(MaxNLocator(integer=True))
-ax.set_ylim(.66,1.08)
+ax.set_ylim(.62,1.05)
 ax.legend(frameon=False,ncol=2,fontsize=8)
 ax.grid(alpha=.14)
 fig.tight_layout()

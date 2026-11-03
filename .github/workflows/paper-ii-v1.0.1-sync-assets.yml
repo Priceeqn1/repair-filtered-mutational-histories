@@ -1,0 +1,40 @@
+name: Temporary sync of Paper II v1.0.1 figure assets
+on:
+  push:
+    branches: [paper-ii-v1.0.1-submission-figures]
+    paths:
+      - ".github/workflows/paper-ii-v1.0.1-sync-assets.yml"
+      - "paper-ii-driver-tunneling/reproduce/plot_biological_sensitivity.py"
+      - "paper-ii-driver-tunneling/reproduce/plot_threshold_regimes.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: paper-ii-v1.0.1-submission-figures
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install -r paper-ii-driver-tunneling/requirements.txt
+      - name: Rebuild Paper II figures
+        run: python paper-ii-driver-tunneling/make_figures.py
+      - name: Commit only the updated Figure 5 and 6 assets
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add paper-ii-driver-tunneling/figures/finite_M10_sensitivity.pdf \
+                  paper-ii-driver-tunneling/figures/finite_M10_sensitivity.png \
+                  paper-ii-driver-tunneling/figures/threshold_regimes.pdf \
+                  paper-ii-driver-tunneling/figures/threshold_regimes.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Regenerate submission Figure 5 and 6 assets"
+            git push origin HEAD:paper-ii-v1.0.1-submission-figures
+          fi
